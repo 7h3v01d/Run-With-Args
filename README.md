@@ -1,144 +1,50 @@
-# 🪟 Run With Args — Native Windows Context Menu Execution for Python (Archived)
+# Run With Args (Archived)
+### Making Python Tools Feel Native on Windows
 
-**Run With Args** is a small but deliberate experiment in making **Python scripts behave like native Windows tools**.
+**Run With Args** is a small systems-level utility that integrates Python scripts directly into the Windows shell, allowing them to be executed from the right-click context menu with full argument support.
 
-Instead of living in terminals or IDEs, Python utilities become:
-- right-click actions
-- argument-aware
-- OS-integrated
-- executable like any other Windows command
-
-This project is archived, but the idea is fully realized.
+This project demonstrates cross-domain thinking across **Python, Windows internals, and developer workflows**.
 
 ---
 
-## 🚀 What problem does this solve?
+## What problem does this solve?
 
-Python is powerful — but on Windows, it often feels *second-class* at the OS level.
+On Windows, Python scripts typically require:
+- opening a terminal
+- navigating directories
+- manually passing arguments
 
-Common friction:
-- scripts require a terminal
-- arguments are awkward to pass from Explorer
-- batch files feel brittle
-- PowerShell is overkill for small tools
-- Python utilities never feel “native”
+This creates friction for tools that are otherwise simple and useful.
 
-This project asked a simple question:
-
-> **Why can’t a Python script behave like a real Windows command?**
+**Run With Args removes that friction** by treating Python scripts as first-class OS commands.
 
 ---
 
-## 🧠 The idea (this is the unique part)
+## Key ideas
 
-**Run With Args** bridges Python and the Windows shell by combining:
+- Python scripts compiled into standalone executables
+- Windows Registry integration for context menu commands
+- Clean argument forwarding from Explorer to Python
+- No terminal interaction required
 
-- a compiled executable wrapper (via PyInstaller)
-- Windows Registry context menu integration
-- clean argument forwarding
-- zero terminal interaction
-
-The result:
-
-> **Right-click → Run Python Tool → Arguments passed → Done**
-
-No console juggling. No shell setup. No hacks at runtime.
+The result:  
+**Right-click → Run Python tool → Done**
 
 ---
 
-## ✨ What it does
+## Why this matters
 
-- Registers a **custom right-click context menu entry** in Windows Explorer
-- Launches a **compiled Python executable**
-- Forwards selected file paths and arguments correctly
-- Handles quoting, spacing, and working directory issues
-- Allows Python scripts to feel like native OS utilities
+This project shows:
+- Systems-level problem solving
+- Comfort working across language, OS, and tooling boundaries
+- Attention to workflow ergonomics, not just code correctness
+- Ability to identify and remove everyday developer friction
 
-This is not a batch-file workaround — it’s proper shell integration.
-
----
-
-## 🧩 Why this is unusual
-
-The pieces individually exist:
-- Python scripts
-- PyInstaller executables
-- Registry edits
-- Argument passing
-
-But very few tools combine them into a **reusable, ergonomic pattern**.
-
-This project lives in the gap between:
-- developer tooling
-- OS-level UX
-- automation ergonomics
-
-Most people accept the friction.
-This project removes it.
+The solution is small, intentional, and complete.
 
 ---
 
-## 🗂️ Project contents
+## Status
 
-- `run_with_args.py`  
-  Core Python logic for argument handling and execution
-
-- `run_with_args.spec`  
-  PyInstaller build configuration for creating a standalone executable
-
-- `Registry Entry.reg`  
-  Windows Registry file to install the right-click context menu entry
-
-- `README.md`  
-  Project documentation
-
-- `notes.txt`  
-  Design notes and observations from development
-
----
-
-## ▶️ How it works (high level)
-
-1. Python script is compiled into a standalone `.exe`
-2. Windows Registry entry registers a context menu command
-3. Explorer passes selected file(s) as arguments
-4. Executable receives and processes arguments normally
-5. Script runs exactly as if invoked from CLI — but without a terminal
-
----
-
-## ⚠️ Project status
-
-**Archived / Complete**
-
-- Core functionality works
-- No active development
-- No installer beyond the `.reg` file
-- Preserved as a reference implementation
-
-This project does exactly what it set out to do.
-
----
-
-## 💡 Why it still matters
-
-This pattern is useful for:
-- developer utilities
-- file processing tools
-- automation scripts
-- internal workflows
-- “one-click” Python tooling on Windows
-
-It demonstrates how Python can be elevated from *script* to *first-class OS tool*.
-
----
-
-## 📜 License
-
-Unlicensed (personal archive).
-
----
-
-## 🏷️ Status
-
-Archived — small, intentional, and quietly powerful.
+Archived.  
+Preserved as a reference implementation of OS-integrated Python tooling.
