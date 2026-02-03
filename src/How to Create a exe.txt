@@ -1,0 +1,2 @@
+
+pyinstaller --onefile --windowed run_with_args.py
